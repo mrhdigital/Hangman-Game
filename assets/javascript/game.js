@@ -58,3 +58,11 @@ function startGame () {
 //Main Processes
 //**************************************************************************************/
 startGame();
+
+// Find out user key input
+document.onkeyup = function(event) {
+      var letterGuessed = String.fromCharCode(event.keyCode).toLocaleLowerCase();
+
+      //Testing / Debugging
+      console.log(letterGuessed);
+}

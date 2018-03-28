@@ -40,9 +40,19 @@ function startGame () {
     lettersInWord = wordSelected.split("");
     numEmptylines = lettersInWord.length;
 
+    for (i = 0; i< numEmptylines; i++) {
+       makeEmptylines.push(" _ ");
+    }
+    //Show empty lines in html
+    document.getElementById("wordToGuess").innerHTML = makeEmptylines.join("");
+
+
+
+    // Testing / Debugging
     console.log(wordSelected);
     console.log(lettersInWord);
     console.log(numEmptylines);
+    console.log(makeEmptylines);
 }
 
 //Main Processes

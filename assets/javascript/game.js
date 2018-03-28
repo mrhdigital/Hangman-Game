@@ -47,6 +47,11 @@ function startGame () {
     lettersInWord = wordSelected.split("");
     numEmptylines = lettersInWord.length;
 
+    //Reset array and guessesRemaing counter
+    guessesRemaining = 9;
+    wrongLetters = [];
+    makeEmptylines = [];
+
     for (i = 0; i< numEmptylines; i++) {
        makeEmptylines.push(" _ ");
     }
@@ -102,12 +107,16 @@ function startGame () {
        winCount++;
        alert("Great You Won!");
        document.getElementById("winCounter").innerHTML = winCount;
+
+       startGame();
    }
    // if user lost then update lossCount
     else if (guessesRemaining == 0){
         lossCount++;
         alert("Sorry you lost try again!");
         document.getElementById("lossCounter").innerHTML = lossCount;
+
+        startGame();
     }
    }
 

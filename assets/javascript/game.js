@@ -21,14 +21,22 @@ Press any key to get started
 //Golobal variables
 //**************************************************************************************/
 
-
+var wordList = [
+    "toucan","parrot", "hornbill", 
+    "woodpecker","penguin","passerine",
+    "heron","cuckoo"]
+var wordSelected = ""
 
 
 //Functions
 //**************************************************************************************/
+// write that selects the word from wordList randomly and store the value in wordSelected
 
-
+function startGame () {
+    wordSelected = wordList[Math.floor(Math.random()*wordList.length)];
+    console.log(wordSelected);
+}
 
 //Main Processes
 //**************************************************************************************/
-
+startGame();

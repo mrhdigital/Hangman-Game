@@ -25,16 +25,24 @@ var wordList = [
     "toucan","parrot", "hornbill", 
     "woodpecker","penguin","passerine",
     "heron","cuckoo"]
-var wordSelected = ""
+var wordSelected = "";
+var lettersInWord = [];
+var numEmptylines = 0;
+var makeEmptylines = [];
 
 
 //Functions
 //**************************************************************************************/
-// write that selects the word from wordList randomly and store the value in wordSelected
-
+// write function that selects the word from wordList randomly and store the value in wordSelected
+// 
 function startGame () {
     wordSelected = wordList[Math.floor(Math.random()*wordList.length)];
+    lettersInWord = wordSelected.split("");
+    numEmptylines = lettersInWord.length;
+
     console.log(wordSelected);
+    console.log(lettersInWord);
+    console.log(numEmptylines);
 }
 
 //Main Processes

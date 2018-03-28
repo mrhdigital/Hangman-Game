@@ -29,6 +29,13 @@ var wordSelected = "";
 var lettersInWord = [];
 var numEmptylines = 0;
 var makeEmptylines = [];
+var wrongLetters = [];
+
+
+// Game Stats
+var guessesRemaining = 9;
+var winCount = 0;
+var lossCount = 0;
 
 
 //Functions
@@ -75,10 +82,33 @@ function startGame () {
             }
         }
     }
+    // if letter was not found in wordSelected array
+    if (wrongLetters.indexOf(letter) == -1   && isLetterinWord == false ) {
+        wrongLetters.push(letter);
+        guessesRemaining--;
+    }
+
    } 
-   // function that will populate game statistics in html
+
+
+   // function that will populate game statistics for every usee input in html
    function gameStatistics() {
    document.getElementById("wordToGuess").innerHTML = makeEmptylines.join(" ");
+   document.getElementById("wrongGuesses").innerHTML = wrongLetters.join(" ");
+   document.getElementById("guessesRemain").innerHTML = guessesRemaining;
+
+   // if user wins then update winCount
+   if(lettersInWord.toString()  === makeEmptylines.toString()) {
+       winCount++;
+       alert("Great You Won!");
+       document.getElementById("winCounter").innerHTML = winCount;
+   }
+   // if user lost then update lossCount
+    else if (guessesRemaining == 0){
+        lossCount++;
+        alert("Sorry you lost try again!");
+        document.getElementById("lossCounter").innerHTML = lossCount;
+    }
    }
 
 //Main Processes

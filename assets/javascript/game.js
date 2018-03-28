@@ -55,6 +55,32 @@ function startGame () {
     console.log(makeEmptylines);
 }
 
+   function checkLetters(letter) {
+       var isLetterinWord = false;
+
+       for (var i = 0; i < numEmptylines; i++) {
+           if(wordSelected[i] == letter) {
+               isLetterinWord = true;
+               console.log(isLetterinWord);
+       }
+    }
+
+    // Find out where in the wordSelected user input letter goes,
+    // populate out makeEmptylines array accordingly
+
+    if (isLetterinWord) {
+        for (i = 0; i < numEmptylines; i++ ) {
+            if (wordSelected[i]== letter) {
+                makeEmptylines[i] = letter;
+            }
+        }
+    }
+   } 
+   // function that will populate game statistics in html
+   function gameStatistics() {
+   document.getElementById("wordToGuess").innerHTML = makeEmptylines.join(" ");
+   }
+
 //Main Processes
 //**************************************************************************************/
 startGame();
@@ -62,7 +88,10 @@ startGame();
 // Find out user key input
 document.onkeyup = function(event) {
       var letterGuessed = String.fromCharCode(event.keyCode).toLocaleLowerCase();
+      checkLetters(letterGuessed);
+      gameStatistics();
 
       //Testing / Debugging
       console.log(letterGuessed);
+     // console.log(checkLetters);
 }

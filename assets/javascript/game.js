@@ -61,10 +61,10 @@ function startGame () {
 
 
     // Testing / Debugging
-    console.log(wordSelected);
-    console.log(lettersInWord);
-    console.log(numEmptylines);
-    console.log(makeEmptylines);
+    //console.log(wordSelected);
+    //console.log(lettersInWord);
+    //console.log(numEmptylines);
+    //console.log(makeEmptylines);
 }
 
    function checkLetters(letter) {
@@ -84,12 +84,16 @@ function startGame () {
         for (i = 0; i < numEmptylines; i++ ) {
             if (wordSelected[i]== letter) {
                 makeEmptylines[i] = letter;
+                var x = document.getElementById("myAudio"); 
+                x.play(); 
             }
         }
     }
     // if letter was not found in wordSelected array
-    if (wrongLetters.indexOf(letter) == -1   && isLetterinWord == false ) {
-        wrongLetters.push(letter);
+    if (wrongLetters.indexOf(letter.toUpperCase()) == -1   && isLetterinWord == false ) {
+        wrongLetters.push(letter.toUpperCase());
+        var x = document.getElementById("myAudio");
+        x.pause(); 
         guessesRemaining--;
     }
 
@@ -131,6 +135,6 @@ document.onkeyup = function(event) {
       gameStatistics();
 
       //Testing / Debugging
-      console.log(letterGuessed);
+     // console.log(letterGuessed);
      // console.log(checkLetters);
 }

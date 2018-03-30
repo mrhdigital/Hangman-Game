@@ -3,6 +3,8 @@
   <head>
 	<title>HangMan Game</title>
 	<!-- Required meta tags -->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -12,14 +14,24 @@
   <body>
 
 	<div class="container">
-			<div class="jumbotron">
-					<h1 class="display-3">HangMan Game</h1>
+			
+				<div class="card1">
+					
+					<div class="card-body">
+						<h1 class="display-3">HangMan Game</h1>
 					<h3 class="lead">Press any key to get started!</h3>
 					<p>Category: Bird's Names</p>
-s					
+					<div>
+						<audio id="myAudio">
+								<source src="assets/music/birdsChirping.mp3" type="audio/mpeg">
+						</audio>
+					</div>
+						
+					</div>
 				</div>
+
 				<div class="card">
-					<img class="card-img-top" src="holder.js/100x180/" alt="">
+					<img class="card-img-top" src="assets/images/heron1.jpg" alt="">
 					<div class="card-body">
 						<h4 class="card-title">Word to Guess</h4>
 						<h3 class="card-text" id = "wordToGuess">_ _ _ _ _ _ _</h3>
@@ -34,23 +46,24 @@ s
 				</div>
 
 				<div class="card">
-						<img class="card-img-top" src="holder.js/100x180/" alt="">
+						
 						<div class="card-body">
 							Guesses Left: <span id = "guessesRemain"> 9 </span> 		
 						</div>
+				</div>
+				<div class="card">
+							
+					<div class="card-body">
+						Win Counter: <span id =winCounter> 0 </span>	
+					</div>		
+						
+				<div class="card">
+							
+					<div class="card-body">
+						Loss Counter: <span id =lossCounter> 0 </span>	
 					</div>
-					<div class="card">
-							<img class="card-img-top" src="holder.js/100x180/" alt="">
-							<div class="card-body">
-									Win Counter: <span id =winCounter> 0 </span>	
-							</div>		
-						</div>	
-						<div class="card">
-							<img class="card-img-top" src="holder.js/100x180/" alt="">
-							<div class="card-body">
-									Loss Counter: <span id =lossCounter> 0 </span>	
-								</div>		
-							</div>
+				</div>		
+							
 	</div>
 	  
 	<!-- linked to javascript fiel -->
@@ -67,7 +80,7 @@ s
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
